@@ -5,3 +5,7 @@
 .piece.black {
   fill: black;
 }
+
+.piece.highlighted {
+  border: 1px green solid;
+}
