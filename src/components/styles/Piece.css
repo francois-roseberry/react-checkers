@@ -7,5 +7,10 @@
 }
 
 .piece.highlighted {
-  border: 1px green solid;
+  stroke: lightgreen;
+  stroke-width: 1;
+}
+
+.piece.shadowed {
+  opacity: 0;
 }

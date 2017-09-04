@@ -7,8 +7,8 @@ import { SIZE } from '../Square';
 import Piece from '../Piece';
 
 describe("<Piece />", () => {
-  const renderSquare = (isWhite = false, highlighted = false) => {
-    return shallow(<Piece highlighted={ highlighted } isWhite={ isWhite } />);
+  const renderSquare = (isWhite = false, highlighted = false, shadowed = false) => {
+    return shallow(<Piece highlighted={ highlighted } isWhite={ isWhite } shadowed={ shadowed } />);
   };
 
   describe("render a SVG circle", () => {
@@ -38,6 +38,14 @@ describe("<Piece />", () => {
       expect(nonHighlightedPiece).toHaveLength(0);
 
       const highlightedPiece = renderSquare(true, true).find('circle.piece.highlighted');
+      expect(highlightedPiece).toHaveLength(1);
+    });
+
+    it('shadowed if needed', () => {
+      const nonHighlightedPiece = renderSquare().find('circle.piece.shadowed');
+      expect(nonHighlightedPiece).toHaveLength(0);
+
+      const highlightedPiece = renderSquare(true, true, true).find('circle.piece.shadowed');
       expect(highlightedPiece).toHaveLength(1);
     });
   });
