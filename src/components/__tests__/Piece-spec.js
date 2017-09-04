@@ -13,24 +13,24 @@ describe("<Piece />", () => {
 
   describe("render a SVG circle", () => {
     it("of the right radius", () => {
-      const piece = renderSquare().find('circle');
+      const piece = renderSquare().find('circle.piece');
       expect(piece).toHaveLength(1);
-      expect(piece.prop('r')).toBe(SIZE / 2);
+      expect(piece.prop('r')).toBe(SIZE / 2 - 2);
     });
 
     it("at the right place", () => {
-      const piece = renderSquare().find('circle');
+      const piece = renderSquare().find('circle.piece');
       expect(piece).toHaveLength(1);
       expect(piece.prop('cx')).toBe(SIZE / 2);
       expect(piece.prop('cy')).toBe(SIZE / 2);
     });
 
     it("of the right color", () => {
-      const blackPiece = renderSquare().find('circle');
-      expect(blackPiece.prop('fill')).toBe('black');
+      const blackPiece = renderSquare().find('circle.piece.black');
+      expect(blackPiece).toHaveLength(1);
 
-      const whitePiece = renderSquare(true).find('circle');
-      expect(whitePiece.prop('fill')).toBe('white');
+      const whitePiece = renderSquare(true).find('circle.piece.white');
+      expect(whitePiece).toHaveLength(1);
     });
   });
 });

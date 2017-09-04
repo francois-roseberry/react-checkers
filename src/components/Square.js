@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './styles/Square.css';
+
 export const SIZE = 40;
 
 class Square extends React.Component {
   render() {
     return (
-      <g transform={ `translate(${this.props.x * SIZE}, ${this.props.y * SIZE})` }>
+      <g className={ `square ${this.props.isWhite ? 'white' : 'black' }` }
+        transform={ `translate(${this.props.x * SIZE}, ${this.props.y * SIZE})` }>
         <rect
           height={ SIZE }
-          style={ { fill: this.props.isWhite ? 'white' : 'black' } }
           width={ SIZE }
           x={ 0 } y={ 0 } />
           { this.props.children }

@@ -26,7 +26,7 @@ class Board extends React.Component {
           <Square isWhite={ x%2 === y%2 } key={ `square-${x}-${y}` } x={ x } y={ y }>
             { this.renderPiece(x, y) }
           </Square>
-      );
+        );
         result.push(square);
       }
     }

@@ -1,0 +1,7 @@
+.square.white rect {
+  fill: white;
+}
+
+.square.black rect {
+  fill: #777777;
+}

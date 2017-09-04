@@ -14,32 +14,32 @@ describe("<Square />", () => {
   };
 
   it("render a <g> container at the right place", () => {
-    const container = renderSquare(X, Y).find('g');
+    const container = renderSquare(X, Y).find('.square');
     expect(container).toHaveLength(1);
     expect(container.prop('transform')).toBe(`translate(${X * SIZE}, ${Y * SIZE})`);
   });
 
   describe("render a SVG rectangle", () => {
     it("of the right size", () => {
-      const square = renderSquare().find('rect');
+      const square = renderSquare().find('.square rect');
       expect(square).toHaveLength(1);
       expect(square.prop('width')).toBe(SIZE);
       expect(square.prop('height')).toBe(SIZE);
     });
 
     it("at the right place", () => {
-      const square = renderSquare().find('rect');
+      const square = renderSquare().find('.square rect');
       expect(square).toHaveLength(1);
       expect(square.prop('x')).toBe(0);
       expect(square.prop('y')).toBe(0);
     });
 
     it("of the right color", () => {
-      const blackSquare = renderSquare().find('rect');
-      expect(blackSquare.prop('style').fill).toBe('black');
+      const blackSquare = renderSquare().find('.square.black');
+      expect(blackSquare).toHaveLength(1);
 
-      const whiteSquare = renderSquare(X, Y, true).find('rect');
-      expect(whiteSquare.prop('style').fill).toBe('white');
+      const whiteSquare = renderSquare(X, Y, true).find('.square.white');
+      expect(whiteSquare).toHaveLength(1);
     });
   });
 
