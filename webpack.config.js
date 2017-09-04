@@ -9,7 +9,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new webpack.DefinePlugin({ ENV: '"dev"'})
+    new webpack.DefinePlugin({ ENV: '"dev"' })
   ],
   module: {
     loaders: [
